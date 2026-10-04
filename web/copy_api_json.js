@@ -40,15 +40,6 @@ async function copyApiJson() {
 app.registerExtension({
     name: "Local.CopyApiJson",
     async setup() {
-        const btn = document.createElement("button");
-        btn.textContent = "Copy API JSON";
-        btn.style.cssText =
-            "position:fixed;right:16px;bottom:16px;z-index:99999;padding:8px 12px;" +
-            "border:none;border-radius:6px;background:#444;color:#fff;" +
-            "font:13px sans-serif;cursor:pointer;opacity:.85;";
-        btn.onclick = copyApiJson;
-        document.body.appendChild(btn);
-
         window.addEventListener("keydown", (e) => {
             if (e.code === "KeyC" && e.ctrlKey && e.shiftKey && (e.metaKey || e.altKey)) {
                 e.preventDefault();
